@@ -1,0 +1,74 @@
+# ------------------------------------
+#
+#    ______      __          ____
+#   / ____/___  / /_  ____ _/ / /_
+#  / /   / __ \/ __ \/ __ `/ / __/
+# / /___/ /_/ / /_/ / /_/ / / /_
+# \____/\____/_.___/\__,_/_/\__/
+#
+# ------------------------------------
+
+# A powerful, static and extensible CMS
+
+# Do you want a more user-friendly CMS?
+# You might want to check out Neutron:
+#    https://gitlab.minteck.org/minteck/neutron
+
+# This is the Cobalt configuration file.
+# Make sure this file is named 'config.yml' and not
+# 'config.default.yml', as you don't need to edit
+# the default configuration file.
+
+# How pages ID are constructed?
+# -----------------------------
+# This will affect the generated HTML archive.
+# All of these methods are cryptographically secure
+#
+# WARNING: the 'sha256' method might not work due to
+# your filesystem's filename length limit. Use with
+# caution
+#
+# Allowed values:
+#    - sha256: SHA-256 sum-based page IDs
+#    - snowflake: filename-based page IDs (default)
+#    - md5: MD5 sum-based page IDs
+pages_id_generator: snowflake
+
+# Conditional publishing
+# ----------------------
+# (thanks to antoine62 for the feature request)
+#
+# If enabled, Cobalt will detect if the 'publish'
+# parameter in your Markdown's file frontmatter
+# equals true. If (and only if) this condition is
+# met, the file will be added.
+#
+# This doesn't affect folder index.
+conditional_publishing: false
+
+# Classes for various HTML elements
+# ---------------------------------
+# If you import some custom CSS (such as Bootstrap),
+# you might want to add custom DOM classes to generated
+# HTML.
+#
+# Only the DOM elements mentioned below are supported by
+# Cobalt. Use custom CSS to style the others.
+classes:
+  main: []
+  footer: []
+  article: []
+  header: []
+  body: []
+  html: []
+
+# Additional JS/CSS imports
+# -------------------------
+# Add URLs to JS or CSS files that will be imported into
+# the generated HTML document.
+#
+# The JS file is imported on <head>, so you need to use
+#     document.addEventListener('load', ...)
+imports:
+  css: []
+  js: []
